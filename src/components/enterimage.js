@@ -14,7 +14,7 @@ export function ImageInput() {
           className="form-control-file"
           style={{
             position: "relative",
-            left: "40%",
+            left: "50%",
             right: "50%"
           }}
         />

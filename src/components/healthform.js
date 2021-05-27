@@ -1,9 +1,20 @@
 import React from "react";
-
+import Jumbotron from "react-bootstrap/Jumbotron";
+//display: "flex",
+//flexDirection: "column"
 export function HealthForm() {
   return (
-    <form>
-      <h4 style={{ fontWeight: "bold" }}>Your Health Profile</h4>
+    <form style={{ paddingTop: "50px" }}>
+      <h4
+        style={{
+          fontWeight: "bold",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        Your Health Profile
+      </h4>
       <p>Help us learn more about your health</p>
 
       <div
