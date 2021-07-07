@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { NutrientOutput } from "./displaynutrients";
 
 export function ImageInput() {
-  const [state, setState] = useState({ clicked: true });
+  const [state, setState] = useState({ clicked: false, file: null });
+
   return (
     <form>
       <h4
@@ -17,15 +18,26 @@ export function ImageInput() {
 
       <div className="form-group">
         <label>Browse Image</label>
+
         <input
           type="file"
           className="form-control-file"
+          onChange={(event) =>
+            setState(({ file }) => ({
+              file: URL.createObjectURL(event.target.files[0])
+            }))
+          }
           style={{
             position: "relative",
             left: "40%",
-            right: "60%"
+            right: "60%",
+            paddingBottom: "10px"
           }}
         />
+        {/* Check if state.file=true && <Render <img>}*/}
+        {Boolean(state.file) && (
+          <img src={state.file} alt="food" width="200" height="200" />
+        )}
       </div>
 
       <button
@@ -36,7 +48,7 @@ export function ImageInput() {
       >
         Submit Image
       </button>
-
+      {/* Check if state.clicked=true && <Render <NutrientOutput> table}*/}
       {state.clicked && <NutrientOutput />}
     </form>
   );
