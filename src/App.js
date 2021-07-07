@@ -1,10 +1,35 @@
 import "./styles.css";
 
-import { Header } from "./components/navbar.js";
-import { Footer } from "./components/footer.js";
-import { HealthForm } from "./components/healthform.js";
-import { ImageInput } from "./components/enterimage.js";
-import { Welcome } from "./components/intro.js";
+import { Home } from "./pages/HOME";
+import { UserProfile } from "./pages/FORM";
+import { FoodAssessment } from "./pages/MAIN";
+import history from "./components/history";
+
+import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
+
+export default function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Router history={history}>
+          <Switch>
+            <Route path="/" exact component={() => <Home />} />
+            <Route path="/userprofile" component={() => <UserProfile />} />
+            <Route
+              path="/foodassessment"
+              component={() => <FoodAssessment />}
+            />
+          </Switch>
+        </Router>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+/*
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Home, About, Contact } from "./components";
 
 export default function App() {
   return (
@@ -17,3 +42,19 @@ export default function App() {
     </div>
   );
 }
+
+export default function App() {
+  return (
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route path="/" exact component={() => <Home />} />
+        </Switch>
+      </Router>
+    </div>
+  );
+}
+
+          <Route path="/about" exact component={() => <About />} />
+          <Route path="/contact" exact component={() => <Contact />} />s
+*/

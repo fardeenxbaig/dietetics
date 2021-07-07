@@ -3,7 +3,7 @@ import React from "react";
 /* Display Footer */
 export function Footer() {
   return (
-    <footer style={{ paddingTop: "15px", paddingBottom: "5px" }}>
+    <footer style={{ paddingTop: "200px", paddingBottom: "70px" }}>
       <hr />
       <p>
         <a style={{ color: "dimgray" }} href="https://twitter.com/fatimamds99">
