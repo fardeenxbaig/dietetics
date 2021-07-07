@@ -1,6 +1,7 @@
 import React from "react";
+import history from "./history";
 
-export function Welcome() {
+export function Hello() {
   return (
     <div
       style={{
@@ -14,7 +15,16 @@ export function Welcome() {
       }}
     >
       <h1 style={{ fontWeight: "bold" }}>Hello from DietLane</h1>
-      <h2>Your ultimate food tracking app!</h2>
+      <h2 style={{ paddingBottom: "100px" }}>
+        Your ultimate food tracking app!
+      </h2>
+      <button
+        type="submit"
+        class="btn btn-dark"
+        onClick={() => history.push("/foodassessment")}
+      >
+        Evaluate My Plate
+      </button>
     </div>
   );
 }
