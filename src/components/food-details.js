@@ -6,8 +6,12 @@ function FoodDetails(props) {
   return (
     <tr className="table-light">
       <td style={{ fontWeight: "bold" }}>{props.name}</td>
-      <td style={{ color: "dimgray" }}>{props.measure}</td>
-      <td>({props.calories}) Cal</td>
+      <td style={{ color: "dimgray" }}>{props.measure}g</td>
+      <td>{props.calories} kCal</td>
+      <td>{props.proteins}g</td>
+      <td>{props.fats}g</td>
+      <td>{props.carbs}g</td>
+      <td>{props.fiber}g</td>
     </tr>
   );
 }
@@ -15,11 +19,15 @@ function FoodDetails(props) {
 /* Display Food Details Table */
 export function FoodTable(props) {
   return (
-    <table className="container w-50 table table-hover">
+    <table className="container w-100 table table-hover">
       <tr class="thead-dark">
         <th>Items in your Plate</th>
-        <th>Measure</th>
-        <th>Calories</th>
+        <th>Portion Measure (g)</th>
+        <th>Energy Calories (kCal)</th>
+        <th>Proteins (g)</th>
+        <th>Fat Lipids (g)</th>
+        <th>Carbohydrates (g)</th>
+        <th>Dietary Fiber (g)</th>
       </tr>
       {calorieData.map((foodItem) => (
         <FoodDetails
@@ -27,6 +35,10 @@ export function FoodTable(props) {
           name={foodItem.name}
           measure={foodItem.measure}
           calories={foodItem.calories}
+          proteins={foodItem.proteins}
+          fats={foodItem.fats}
+          carbs={foodItem.carbs}
+          fiber={foodItem.fiber}
         />
       ))}
     </table>

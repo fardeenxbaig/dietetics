@@ -1,23 +1,39 @@
 const calorieData = [
   {
     name: "Plain Dosa",
-    measure: "1 medium",
-    calories: 135
+    measure: 20,
+    calories: 135,
+    proteins: 0,
+    fats: 0,
+    carbs: 0,
+    fiber: 0
   },
   {
     name: "Dal",
-    measure: "1 large katori",
-    calories: 80
+    measure: 15,
+    calories: 80,
+    proteins: 0,
+    fats: 0,
+    carbs: 0,
+    fiber: 0
   },
   {
     name: "Whole Milk",
-    measure: "225 ml (1 cup)",
-    calories: 150
+    measure: 225,
+    calories: 150,
+    proteins: 0,
+    fats: 0,
+    carbs: 0,
+    fiber: 0
   },
   {
     name: "Banana",
-    measure: "1/2 medium",
-    calories: 50
+    measure: 20,
+    calories: 50,
+    proteins: 0,
+    fats: 0,
+    carbs: 0,
+    fiber: 0
   }
 ];
 

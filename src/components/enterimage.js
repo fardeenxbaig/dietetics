@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NutrientOutput } from "./displaynutrients";
 
 export function ImageInput() {
-  const [state, setState] = useState({ clicked: false, file: null });
+  const [state, setState] = useState({ clicked: true, file: null });
+
+  useEffect(() => {
+    if (state.clicked) return <NutrientOutput />;
+  });
 
   return (
     <form>
