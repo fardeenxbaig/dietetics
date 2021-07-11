@@ -1,17 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NutrientOutput } from "./displaynutrients";
 
 export function ImageInput() {
   const [state, setState] = useState({ clicked: false, file: null });
   const [profile, setProfile] = useState([]);
-
-  useEffect(() => {
-    fetch("/uploadimage")
-      .then((response) => response.json())
-      .then((data) => {
-        setProfile(data.foodprofile);
-      });
-  }, []);
 
   return (
     <form>
@@ -32,9 +24,7 @@ export function ImageInput() {
           type="file"
           className="form-control-file"
           onChange={(event) =>
-            setState(({ file }) => ({
-              file: URL.createObjectURL(event.target.files[0])
-            }))
+            setState(({ file }) => ({ file: event.target.files[0] }))
           }
           style={{
             position: "relative",
@@ -46,16 +36,19 @@ export function ImageInput() {
 
         {/* Check if state.file=true && <Render <img>}*/}
         {Boolean(state.file) && (
-          <img src={state.file} alt="food" width="200" height="200" />
+          <img
+            src={URL.createObjectURL(state.file)}
+            alt="food"
+            width="300"
+            height="200"
+          />
         )}
       </div>
 
       <button
         type="submit"
         class="btn btn-dark"
-        onClick={(event) =>
-          setState(({ clicked }) => ({ clicked: true, file: state.file }))
-        }
+        onClick={(event) => setState(({ clicked }) => ({ clicked: true }))}
         style={{ marginTop: "10px", marginBottom: "20px" }}
       >
         Submit Image
@@ -69,8 +62,8 @@ export function ImageInput() {
 //paddingLeft: "100px"
 
 /*
-# ORIGINAL BUTTON CLICK
-<button
+######################## ORIGINAL BUTTON CLICK
+      <button
         type="submit"
         class="btn btn-dark"
         onClick={(event) =>
@@ -78,8 +71,7 @@ export function ImageInput() {
         }
         style={{ marginTop: "10px", marginBottom: "20px" }}
       >
-#########################################
-# USEEFFECT TO FETCH DATA
+##################### USEEFFECT TO FETCH DATA
   useEffect(() => {
     fetch("/uploadimage")
       .then((response) => response.json())
@@ -87,33 +79,30 @@ export function ImageInput() {
         setProfile(data.foodprofile);
       });
   }, []);
-########################################
-# DEMO BUTTON
-<Button
-	onClick = { async() => {
-		const movie = {title, rating};
-		const response = await fetch("/add_movie", {
-			method: "POST",
-			headers: {"Content-Type": "application/json"},
-			body: JSON.stringify(movie)
-			});
-		if (response.ok) {
-      console.log("response worked");
-			}
-		}
-  }> submit </ Button>
   ##############################
-  # HOW MY BUTTON SHOULD BE
-  onClick = { async() => {
-		const response = await fetch("/uploadimage", {
-			method: "POST",
-			headers: {"Content-Type": "application/json"},
-			body: JSON.stringify(state.file)
-			});
-		if (response.ok) {
-			console.log("response worked");
-			response.json().then((data) => { setProfile(data.foodprofile); })
-		}
-		setState(({ clicked }) => ({ clicked: true }))
-	}
+  # FINAL BUTTON
+        <button
+        type="submit"
+        class="btn btn-dark"
+        onClick={ async() => {
+		      let reader = new FileReader();
+		      reader.readAsDataURL(state.file);
+		      reader.onload = () => { setState({file: reader.result}) };
+
+		      const requestOptions = {
+			      method: "POST",
+			      headers: {"Content-Type": "application/json"},
+			      body: JSON.stringify(state.file)
+			      };
+
+		      const response = await fetch("/uploadimage", requestOptions);
+		      const data = await response.json();
+		      if (response.ok) {
+			      console.log("response worked");
+			      setProfile(data.foodprofile);
+			      setState(({ clicked }) => ({ clicked: true }));
+		      }
+	      }
+        style={{ marginTop: "10px", marginBottom: "20px" }}
+      >
 */

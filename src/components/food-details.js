@@ -46,6 +46,19 @@ export function FoodTable(props) {
 }
 
 /*
+################## ORIGINAL
+      {calorieData.map((foodItem) => (
+        <FoodDetails
+          key={foodItem.name}
+          name={foodItem.name}
+          measure={foodItem.measure}
+          calories={foodItem.calories}
+          proteins={foodItem.proteins}
+          fats={foodItem.fats}
+          carbs={foodItem.carbs}
+          fiber={foodItem.fiber}
+        />
+################### FETCHED DATA
        {props.profile.map((foodItem) => (
         <FoodDetails
           key={foodItem.name}
