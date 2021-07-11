@@ -3,10 +3,15 @@ import { NutrientOutput } from "./displaynutrients";
 
 export function ImageInput() {
   const [state, setState] = useState({ clicked: true, file: null });
+  const [profile, setProfile] = useState([]);
 
   useEffect(() => {
-    if (state.clicked) return <NutrientOutput />;
-  });
+    fetch("/uploadimage")
+      .then((response) => response.json())
+      .then((data) => {
+        setProfile(data.foodprofile);
+      });
+  }, []);
 
   return (
     <form>
