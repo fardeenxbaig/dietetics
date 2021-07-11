@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NutrientOutput } from "./displaynutrients";
 
 export function ImageInput() {
-  const [state, setState] = useState({ clicked: false, file: null });
+  const [state, setState] = useState({ clicked: true, file: null });
   const [profile, setProfile] = useState([]);
 
   return (

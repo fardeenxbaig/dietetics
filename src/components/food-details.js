@@ -6,7 +6,7 @@ function FoodDetails(props) {
   return (
     <tr className="table-light">
       <td style={{ fontWeight: "bold" }}>{props.name}</td>
-      <td style={{ color: "dimgray" }}>{props.measure}g</td>
+      <td style={{ color: "dimgray" }}>{props.measure.toFixed(2)}g</td>
       <td>{props.calories} kCal</td>
       <td>{props.proteins}g</td>
       <td>{props.fats}g</td>
