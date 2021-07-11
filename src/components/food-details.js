@@ -44,3 +44,17 @@ export function FoodTable(props) {
     </table>
   );
 }
+
+/*
+       {props.profile.map((foodItem) => (
+        <FoodDetails
+          key={foodItem.name}
+          name={foodItem.name}
+          measure={foodItem.measure}
+          calories={foodItem.calories}
+          proteins={foodItem.proteins}
+          fats={foodItem.fats}
+          carbs={foodItem.carbs}
+          fiber={foodItem.fiber}
+        />
+*/
