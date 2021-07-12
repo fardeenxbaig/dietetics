@@ -8,7 +8,7 @@ export function Header(props) {
     <nav className="navbar navbar-light bg-light">
       <a classNAme="navbar-brand" href="/" style={{ color: "palevioletred" }}>
         <img
-          src="./images/logo.png"
+          src={require("./images/logo.png")}
           width="30"
           height="30"
           class="d-inline-block align-top"
