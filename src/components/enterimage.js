@@ -1,9 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { NutrientOutput } from "./displaynutrients";
 
 export function ImageInput() {
   const [state, setState] = useState({ clicked: false, file: null });
   const [profile, setProfile] = useState([]);
+
+  /*
+  const isClick = useRef(true);
+  //const [click, setClick] = useState(false);
+  //setState(({ clicked }) => ({ clicked: true }))
+
+  const handleClick = useCallback(() => {
+    setState({ clicked: true });
+  }, []);
+
+  useEffect(() => {
+    if (isClick.current) {
+      isClick.current = false;
+      return;
+    } }, [state.clicked]);
+    */
 
   return (
     <form>
@@ -48,7 +64,7 @@ export function ImageInput() {
       <button
         type="submit"
         class="btn btn-dark"
-        onClick={(event) => setState(({ clicked }) => ({ clicked: true }))}
+        onClick={() => setState(({ clicked }) => ({ clicked: true }))}
         style={{ marginTop: "10px", marginBottom: "20px" }}
       >
         Submit Image
