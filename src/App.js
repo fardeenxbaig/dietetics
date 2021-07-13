@@ -5,12 +5,12 @@ import { UserProfile } from "./pages/FORM";
 import { FoodAssessment } from "./pages/MAIN";
 import history from "./components/history";
 
-import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Router, Route, Switch } from "react-router-dom";
 
 export default function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Router history={history}>
           <Switch>
             <Route path="/" exact component={() => <Home />} />
@@ -21,7 +21,7 @@ export default function App() {
             />
           </Switch>
         </Router>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
