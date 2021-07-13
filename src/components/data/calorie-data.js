@@ -1,5 +1,38 @@
 const calorieData = [
   {
+    name: "___",
+    measure: 0.0,
+    calories: 0,
+    proteins: 0,
+    fats: 0,
+    carbs: 0,
+    fiber: 0
+  },
+  {
+    name: "___",
+    measure: 0.0,
+    calories: 0,
+    proteins: 0,
+    fats: 0,
+    carbs: 0,
+    fiber: 0
+  },
+  {
+    name: "___",
+    measure: 0.0,
+    calories: 0,
+    proteins: 0,
+    fats: 0,
+    carbs: 0,
+    fiber: 0
+  }
+];
+
+export default calorieData;
+
+/*
+const calorieData = [
+  {
     name: "milk",
     measure: 45.059225849833794,
     calories: 60,
@@ -46,7 +79,10 @@ const calorieData = [
   }
 ];
 
-/*
+#################################
+#################################
+#################################
+
 const calorieData = [
   {
     name: "Plain Dosa",
@@ -86,5 +122,3 @@ const calorieData = [
   }
 ];
 */
-
-export default calorieData;

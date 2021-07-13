@@ -1,13 +1,18 @@
 import React from "react";
 import history from "./history";
-import "./images/logo.png";
-//onClick={() => history.push("/")
+
+//onClick={() => history.push("/")}
 // <img src="https://banner2.cleanpng.com/20190731/coj/kisspng-fork-icon-fast-food-icon-5d4125521cc0d5.6481897415645504821178.jpg"
 // src={require("./images/logo.png")}
 export function Header(props) {
   return (
     <nav className="navbar navbar-light bg-light">
-      <a classNAme="navbar-brand" href="/" style={{ color: "palevioletred" }}>
+      <a
+        classNAme="navbar-brand"
+        href="/"
+        onClick={() => history.push("/")}
+        style={{ color: "palevioletred" }}
+      >
         <img
           src={require("./images/logo.png")}
           width="30"

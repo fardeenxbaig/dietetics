@@ -18,6 +18,9 @@ function FoodDetails(props) {
 
 /* Display Food Details Table */
 export function FoodTable(props) {
+  let foodData = [];
+  !!props.profile ? (foodData = calorieData) : (foodData = props.profile);
+
   return (
     <table className="container w-100 table table-hover">
       <tr class="thead-dark">
@@ -29,7 +32,7 @@ export function FoodTable(props) {
         <th>Carbohydrates (g)</th>
         <th>Dietary Fiber (g)</th>
       </tr>
-      {calorieData.map((foodItem) => (
+      {foodData.map((foodItem) => (
         <FoodDetails
           key={foodItem.name}
           name={foodItem.name}
@@ -46,28 +49,12 @@ export function FoodTable(props) {
 }
 
 /*
-################## ORIGINAL
-      {calorieData.map((foodItem) => (
-        <FoodDetails
-          key={foodItem.name}
-          name={foodItem.name}
-          measure={foodItem.measure}
-          calories={foodItem.calories}
-          proteins={foodItem.proteins}
-          fats={foodItem.fats}
-          carbs={foodItem.carbs}
-          fiber={foodItem.fiber}
-        />
-################### FETCHED DATA
-       {props.profile.map((foodItem) => (
-        <FoodDetails
-          key={foodItem.name}
-          name={foodItem.name}
-          measure={foodItem.measure}
-          calories={foodItem.calories}
-          proteins={foodItem.proteins}
-          fats={foodItem.fats}
-          carbs={foodItem.carbs}
-          fiber={foodItem.fiber}
-        />
+# ORIGINAL: {calorieData.map((foodItem) => (
+# FETCHED DATA: {props.profile.map((foodItem) => (
+######################
+  if (!!props.profile) {  // !!data means isEmpty(data)
+    foodData = calorieData;
+  } else {
+    foodData = props.profile;
+  }
 */

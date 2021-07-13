@@ -1,25 +1,34 @@
-import React, { useState, useRef, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import { NutrientOutput } from "./displaynutrients";
 
 export function ImageInput() {
   const [state, setState] = useState({ clicked: false, file: null });
   const [profile, setProfile] = useState([]);
 
-  /*
-  const isClick = useRef(true);
-  //const [click, setClick] = useState(false);
-  //setState(({ clicked }) => ({ clicked: true }))
+  const handleClick = useCallback(async () => {
+    setState({ clicked: true, file: state.file });
+    /*
+    let reader = new FileReader();
+    reader.readAsDataURL(state.file);
+    reader.onload = () => {
+      setState({ file: reader.result });
+    };
 
-  const handleClick = useCallback(() => {
-    setState({ clicked: true });
-  }, []);
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(state.file)
+    };
 
-  useEffect(() => {
-    if (isClick.current) {
-      isClick.current = false;
-      return;
-    } }, [state.clicked]);
+    const response = await fetch("/uploadimage", requestOptions);
+    const data = await response.json();
+    if (response.ok) {
+      console.log("response worked");
+      setProfile(data.foodprofile);
+      setState({ clicked: true });
+    }
     */
+  }, [state.file]);
 
   return (
     <form>
@@ -62,9 +71,9 @@ export function ImageInput() {
       </div>
 
       <button
-        type="submit"
+        type="button"
         class="btn btn-dark"
-        onClick={() => setState(({ clicked }) => ({ clicked: true }))}
+        onClick={handleClick}
         style={{ marginTop: "10px", marginBottom: "20px" }}
       >
         Submit Image
@@ -76,49 +85,3 @@ export function ImageInput() {
   );
 }
 //paddingLeft: "100px"
-
-/*
-######################## ORIGINAL BUTTON CLICK
-      <button
-        type="submit"
-        class="btn btn-dark"
-        onClick={(event) =>
-          setState(({ clicked }) => ({ clicked: true, file: state.file }))
-        }
-        style={{ marginTop: "10px", marginBottom: "20px" }}
-      >
-##################### USEEFFECT TO FETCH DATA
-  useEffect(() => {
-    fetch("/uploadimage")
-      .then((response) => response.json())
-      .then((data) => {
-        setProfile(data.foodprofile);
-      });
-  }, []);
-  ##############################
-  # FINAL BUTTON
-        <button
-        type="submit"
-        class="btn btn-dark"
-        onClick={ async() => {
-		      let reader = new FileReader();
-		      reader.readAsDataURL(state.file);
-		      reader.onload = () => { setState({file: reader.result}) };
-
-		      const requestOptions = {
-			      method: "POST",
-			      headers: {"Content-Type": "application/json"},
-			      body: JSON.stringify(state.file)
-			      };
-
-		      const response = await fetch("/uploadimage", requestOptions);
-		      const data = await response.json();
-		      if (response.ok) {
-			      console.log("response worked");
-			      setProfile(data.foodprofile);
-			      setState(({ clicked }) => ({ clicked: true }));
-		      }
-	      }
-        style={{ marginTop: "10px", marginBottom: "20px" }}
-      >
-*/

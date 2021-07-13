@@ -13,4 +13,6 @@ export function NutrientOutput(props) {
   );
 }
 
+//export const MemoizedOutput = React.memo(NutrientOutput);
+
 //style={{ }}
