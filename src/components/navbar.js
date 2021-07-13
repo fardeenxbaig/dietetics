@@ -1,5 +1,6 @@
 import React from "react";
 import history from "./history";
+import logo from "/public/assets/images/logo.png";
 
 //{require("/public/assets/images/logo.png")}
 //onClick={() => history.push("/")}
@@ -10,7 +11,7 @@ export function Header(props) {
     <nav className="navbar navbar-light bg-light">
       <a classNAme="navbar-brand" href="/" style={{ color: "palevioletred" }}>
         <img
-          src={require("/public/assets/images/logo.png")}
+          src={logo}
           width="30"
           height="30"
           class="d-inline-block align-top"
