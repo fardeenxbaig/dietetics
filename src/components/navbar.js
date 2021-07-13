@@ -7,14 +7,9 @@ import history from "./history";
 export function Header(props) {
   return (
     <nav className="navbar navbar-light bg-light">
-      <a
-        classNAme="navbar-brand"
-        href="/"
-        onClick={() => history.push("/")}
-        style={{ color: "palevioletred" }}
-      >
+      <a classNAme="navbar-brand" href="/" style={{ color: "palevioletred" }}>
         <img
-          src={require("./images/logo.png")}
+          src={require("../../public/assets/images/logo.png")}
           width="30"
           height="30"
           class="d-inline-block align-top"
