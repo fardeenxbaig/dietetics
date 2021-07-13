@@ -53,8 +53,8 @@ export function ImageInput() {
           }
           style={{
             position: "relative",
-            left: "40%",
-            right: "60%",
+            left: "45%",
+            right: "65%",
             paddingBottom: "10px"
           }}
         />
@@ -64,8 +64,8 @@ export function ImageInput() {
           <img
             src={URL.createObjectURL(state.file)}
             alt="food"
-            width="300"
-            height="200"
+            width="150"
+            height="100"
           />
         )}
       </div>

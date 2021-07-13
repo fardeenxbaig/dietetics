@@ -1,52 +1,33 @@
 import React from "react";
-import history from "./history";
-import logo from "/public/assets/images/logo.png";
+import { Navbar, Nav } from "react-bootstrap";
 
-//{require("/public/assets/images/logo.png")}
+//import history from "./history";
 //onClick={() => history.push("/")}
+
+// import logo from "/public/assets/images/logo.png";
+// src={require("/public/assets/images/logo.png")}
 // <img src="https://banner2.cleanpng.com/20190731/coj/kisspng-fork-icon-fast-food-icon-5d4125521cc0d5.6481897415645504821178.jpg"
-// src={require("./images/logo.png")}
+// src="https://uploads.codesandbox.io/uploads/user/1669b0fb-0e56-4898-9ab6-513d9342028d/9R04-Artboard+2_crop.png"
+
+// className="navbar navbar-light bg-light"
 export function Header(props) {
   return (
-    <nav className="navbar navbar-light bg-light">
-      <a classNAme="navbar-brand" href="/" style={{ color: "palevioletred" }}>
+    <Navbar bg="dark" variant="dark">
+      <Navbar.Brand href="/" style={{ color: "palevioletred" }}>
         <img
-          src={logo}
-          width="30"
+          src="https://uploads.codesandbox.io/uploads/user/1669b0fb-0e56-4898-9ab6-513d9342028d/9R04-Artboard+2_crop.png"
+          width="50"
           height="30"
           class="d-inline-block align-top"
           alt=""
+          style={{ marginRight: "15px", marginLeft: "0px", border: "0" }}
         />
-        {"  "}
         {props.heading}
-      </a>
-
-      <button
-        className="navbar-toggler"
-        type="button"
-        dataToggle="collapse"
-        dataTarget="#navbarSupportedContent"
-        ariaControls="navbarSupportedContent"
-        ariaExpanded="false"
-        ariaLabel="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-
-      <div className="collapse navbar-collapse">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">
-              Home <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Link
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      </Navbar.Brand>
+      <Nav className="mr-auto"></Nav>
+      <Nav>
+        <Nav.Link href="#home">About</Nav.Link>
+      </Nav>
+    </Navbar>
   );
 }
