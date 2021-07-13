@@ -1,4 +1,5 @@
 import React from "react";
+import { Table } from "react-bootstrap";
 
 import calorieData from "./data/calorie-data.js";
 
@@ -22,7 +23,7 @@ export function FoodTable(props) {
   !!props.profile ? (foodData = calorieData) : (foodData = props.profile);
 
   return (
-    <table className="container w-100 table table-hover">
+    <Table responsive className="container w-100 table table-hover">
       <tr class="thead-dark">
         <th>Items in your Plate</th>
         <th>Portion Measure (g)</th>
@@ -44,7 +45,7 @@ export function FoodTable(props) {
           fiber={foodItem.fiber}
         />
       ))}
-    </table>
+    </Table>
   );
 }
 

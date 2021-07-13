@@ -1,4 +1,5 @@
 import "./styles.css";
+import { Container } from "react-bootstrap";
 
 import { Home } from "./pages/HOME";
 import { UserProfile } from "./pages/FORM";
@@ -9,7 +10,7 @@ import { HashRouter, Router, Route, Switch } from "react-router-dom";
 
 export default function App() {
   return (
-    <div className="App">
+    <Container fluid="true" className="App min-vh-100">
       <HashRouter>
         <Router history={history}>
           <Switch>
@@ -22,7 +23,7 @@ export default function App() {
           </Switch>
         </Router>
       </HashRouter>
-    </div>
+    </Container>
   );
 }
 

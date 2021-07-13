@@ -7,9 +7,7 @@ import { Navbar, Nav } from "react-bootstrap";
 // import logo from "/public/assets/images/logo.png";
 // src={require("/public/assets/images/logo.png")}
 // <img src="https://banner2.cleanpng.com/20190731/coj/kisspng-fork-icon-fast-food-icon-5d4125521cc0d5.6481897415645504821178.jpg"
-// src="https://uploads.codesandbox.io/uploads/user/1669b0fb-0e56-4898-9ab6-513d9342028d/9R04-Artboard+2_crop.png"
 
-// className="navbar navbar-light bg-light"
 export function Header(props) {
   return (
     <Navbar bg="dark" variant="dark">
