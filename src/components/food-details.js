@@ -19,8 +19,9 @@ function FoodDetails(props) {
 
 /* Display Food Details Table */
 export function FoodTable(props) {
-  let foodData = [];
-  !!props.profile ? (foodData = calorieData) : (foodData = props.profile);
+  let foodData = props.profile;
+  console.log(foodData);
+  //!!props.profile ? (foodData = calorieData) : (foodData = props.profile);
 
   return (
     <Table responsive className="container w-100 table table-hover">

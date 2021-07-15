@@ -8,7 +8,7 @@ export function Home() {
     <div>
       <Header heading="DietLane" />
       <Hello />
-      <Welcome />
+      {/*<Welcome />*/}
       <Footer />
     </div>
   );
