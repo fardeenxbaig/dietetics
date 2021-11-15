@@ -8,6 +8,8 @@ import history from "./components/history";
 
 import { HashRouter, Router, Route, Switch } from "react-router-dom";
 
+//Go to components/enterimage.js & change the proxy link
+
 export default function App() {
   return (
     <Container fluid="true" className="App min-vh-100">
